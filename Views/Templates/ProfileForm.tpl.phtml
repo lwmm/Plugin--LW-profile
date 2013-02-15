@@ -123,15 +123,6 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="control-group <?php if (isset($this->errors["info"])) echo "error"; ?>">
-                <label class="control-label" for="info"><?php echo $this->lang["info"] ?></label>
-                <div class="controls">
-                    <textarea id="info" rows="3" name="info" id="info" ><?php echo $this->info ?></textarea>
-                    <?php if (isset($this->errors["info"])): ?>
-                        <span class="help-inline"><?php echo $this->lang["error_info_length"] ?></span>
-                    <?php endif; ?>
-                </div>
-            </div>
         </fieldset>
 
         <div class="control-group">

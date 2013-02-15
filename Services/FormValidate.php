@@ -47,8 +47,7 @@ class FormValidate
                     "intranet_id"      ,
                     "email"            ,
                     "firstname"        ,
-                    "lastname"         ,
-                    "info"             
+                    "lastname"         
             );
         
     }
@@ -243,16 +242,6 @@ class FormValidate
     public function lastnameValidate($value)
     {
         return $this->defaultValidation("lastname", $value, 255);
-    }
-    
-    /**
-     * Additional personal information will be validated.
-     * @param string $value
-     * @return bool
-     */
-    public function infoValidate($value)
-    {
-        return $this->defaultValidation("info", $value, pow(2, 32) - 1);
     }
     
     /**

@@ -47,13 +47,12 @@ class UserObjectFactory
             }
             
             $this->newUObj->setUserId($this->oldUObj->getUserData("id"));
-            $this->newUObj->setIntranetId($this->oldUObj->getUserData("intranet_id"));
+            $this->newUObj->setIntranetId($this->request->getRaw("intranet"));
             $this->newUObj->setPassword($password);
             $this->newUObj->setUsername($this->request->getRaw("loginname"));
             $this->newUObj->setFirstName($this->request->getRaw("firstname"));
             $this->newUObj->setLastName($this->request->getRaw("lastname"));
             $this->newUObj->setEmail($this->request->getRaw("email"));
-            $this->newUObj->setInfo($this->request->getRaw("info"));
 
         } else {
             
@@ -63,7 +62,6 @@ class UserObjectFactory
             $this->newUObj->setFirstName($this->request->getRaw("firstname"));
             $this->newUObj->setLastName($this->request->getRaw("lastname"));
             $this->newUObj->setEmail($this->request->getRaw("email"));
-            $this->newUObj->setInfo($this->request->getRaw("info"));
         }
         
         return $this->newUObj;

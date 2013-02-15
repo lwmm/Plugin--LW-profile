@@ -88,7 +88,6 @@ class lw_profile extends lw_plugin
         $inUserObject->setEmail($this->in_auth->getUserData("email"));
         $inUserObject->setFirstName($this->in_auth->getUserData("opt1text"));
         $inUserObject->setLastName($this->in_auth->getUserData("opt2text"));
-        $inUserObject->setInfo($this->in_auth->getUserData("opt1clob"));
         
         return $inUserObject;
     }

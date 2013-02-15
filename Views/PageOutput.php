@@ -149,7 +149,6 @@ class PageOutput
             "firstname"                                         => "Vorname",
             "lastname"                                          => "Nachname",
             "email"                                             => "Email",
-            "info"                                              => "Info",
             "submit"                                            => "Senden",
             "cancel"                                            => "Abbrechen",
             "error_username_required"                           => "Pflichtfeld",
@@ -161,7 +160,6 @@ class PageOutput
             "error_firstname_length"                            => "Max 255 Zeichen!",
             "error_lastname_length"                             => "Max 255 Zeichen!",
             "error_email"                                       => "Keine korrekte Email-Adresse!",
-            "error_info_length"                                 => "Max 4.294.967.295 Zeichen!"
         );
         
         $languageEN = array(
@@ -174,7 +172,6 @@ class PageOutput
             "firstname"                                         => "Firstname",
             "lastname"                                          => "Lastname",
             "email"                                             => "Email",
-            "info"                                              => "Info",
             "submit"                                            => "Submit",
             "cancel"                                            => "Cancel",
             "error_username_required"                           => "Required",
@@ -186,7 +183,6 @@ class PageOutput
             "error_firstname_length"                            => "Max 255 characters!",
             "error_lastname_length"                             => "Max 255 characters!",
             "error_email"                                       => "No correct email address",
-            "error_info_length"                                 => "Max 4,294,967,295 characters!"
         );
         
         if($lang == "de") {

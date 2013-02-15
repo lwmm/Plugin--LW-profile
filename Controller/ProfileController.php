@@ -137,7 +137,6 @@ class ProfileController extends \lw_object
                 "firstname"         => $this->request->getRaw("firstname"),
                 "lastname"          => $this->request->getRaw("lastname"),
                 "email"             => $this->request->getRaw("email"),
-                "info"              => $this->request->getRaw("info")
             );
         } else {
             return array(
@@ -147,7 +146,6 @@ class ProfileController extends \lw_object
                 "firstname"         => $this->userObject->getUserData("firstname"),
                 "lastname"          => $this->userObject->getUserData("lastname"),
                 "email"             => $this->userObject->getUserData("email"),
-                "info"              => $this->userObject->getUserData("info")
             );
         }
     }
