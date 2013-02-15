@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="<?php echo $this->Css ?>" />
+<script type="text/javascript" src="<?php echo $this->jqUI ?>"></script>
+<link rel="stylesheet" href="<?php echo $this->jqUIcss ?>" />
+<script type="text/javascript" src="<?php echo $this->bootstrapJS ?>"></script>
+<link rel="stylesheet" href="<?php echo $this->bootstrapCSS ?>" />
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function() {
+        $( "#tabs" ).tabs();
+        $("#tabs li a").click(function() {
+            $("#tabs li a").removeClass('active');
+            $(this).addClass("active");
+        });
+    });
+</script>
+
+<fieldset class="lwadminform">
+
+    <legend class="lwadminform">lw_intranetuser Basisdaten bearbeiten</legend>
+    
+    <form action="<?php echo $this->actionUrl ?>" method="POST" >
+    <div id="tabs">
+        <ul>
+            <li><a href="#de" class="active">Sprache: DE</a></li>
+            <li><a href="#en">Sprache: EN</a></li>
+            <li><a href="#logout_seite">Logout-Seite</a></li>
+        </ul>
+        
+        <div id="de">
+            <div class="description" >
+                Hier k&ouml;nnen Sie, f&uuml;r die jeweilige Sprache, die Ausgabetexte festlegen.<br>
+                <br>
+                &Auml;nderungen werden an allen Stellen angezeigt, wo dieses Plugin genutzt wird. Es liegt momenten nur ein Basisdatensatz f&uuml;r bereit, auf den
+                alle eingesetzten lw_intranetuser und lw_profile Plugins zugreifen!!!
+            </div>
+            
+            <input type="radio" name="selectedLang" value="de" style="margin-top: -2px;" <?php if($this->data["parameter"]["selectedLang"] == "de") { echo "checked=\"checked\""; } ?>> deutsche Ausgabe verwerden?<br/><br/>
+            
+            <div style="margin-bottom:20px;">
+                <input class="btn btn-primary" type="submit" value="speichern" />&nbsp;<input class="btn" type="button" value="abbrechen" onclick="document.location.href='?obj=content';"/>
+            </div>
+            <?php echo $this->de ?> 
+        </div>
+        
+        <div id="en">
+            <div class="description" >
+                Hier k&ouml;nnen Sie, f&uuml;r die jeweilige Sprache, die Ausgabetexte festlegen.<br>
+                <br>
+                &Auml;nderungen werden an allen Stellen angezeigt, wo dieses Plugin genutzt wird. Es liegt momenten nur ein Basisdatensatz f&uuml;r bereit, auf den
+                alle eingesetzten lw_intranetuser und lw_profile Plugins zugreifen!!!
+            </div>
+            
+            <input type="radio" name="selectedLang" value="en" style="margin-top: -2px;" <?php if($this->data["parameter"]["selectedLang"] == "en") { echo "checked=\"checked\""; } ?>> englische Ausgabe verwerden?<br/><br/>
+            
+            <div style="margin-bottom:20px;">
+                <input class="btn btn-primary" type="submit" value="speichern" />&nbsp;<input class="btn" type="button" value="abbrechen" onclick="document.location.href='?obj=content';"/>
+            </div>
+            
+            <?php echo $this->en ?> 
+        </div>
+        
+        <div id="logout_seite">
+            <div class="description" >
+                Hier k&ouml;nnen Sie die Logout-Seite festlegen ( Id der gew&uuml;nschten Seite eingeben ):
+            </div>            
+            Seiten-Id : <input id="logout_id" type="number" name="logout_id" style="height:30px;margin-top: 5px;width: 40px;" value="<?php if(isset($this->data["parameter"]["logout_id"])) { echo $this->data["parameter"]["logout_id"]; } else { echo 0 ;} ?>">
+        </div>
+        
+        
+        <div style="margin-top:15px;margin-bottom:20px; margin-left:20px;">
+            <input class="btn btn-primary" type="submit" value="speichern" />&nbsp;<input class="btn" type="button" value="abbrechen" onclick="document.location.href='?obj=content';"/>
+        </div>
+        
+    </div>
+    </form>
+</fieldset>

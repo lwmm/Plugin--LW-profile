@@ -1,0 +1,130 @@
+<link href="<?php echo $this->urlCSS ?>" rel="stylesheet">
+<link href="<?php echo $this->urlPluginCSS ?>" rel="stylesheet">
+<script type="text/javascript" src="<?php echo $this->urlJS ?>"></script>
+
+<div id="profile_form_container">
+    <button id="logout_btn" type="button" class="btn btn-inverse" onclick="self.location.href='<?php echo $this->logoutUrl ?>';">Logout</button><br/><br/>
+    <form class="form-horizontal" action="<?php echo $this->formUrl ?>" method="post">
+        <fieldset class="profile_form">
+            <legend class="profile_form"><?php echo $this->lang["base_data"] ?></legend>
+            <div class="control-group <?php if (isset($this->errors["username"]) || $this->setNameError === true ) echo "error"; ?>">
+                <label class="control-label" for="loginname"><?php echo $this->lang["username"] ?></label>
+                <div class="controls">
+                    <input type="text" name="loginname" id="loginname" placeholder="<?php echo $this->lang["username"] ?>" value="<?php echo $this->loginname ?>">
+                    <?php if (isset($this->errors["username"][1])) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_username_required"] ?></span>
+                    <?php endif; ?>
+                    <?php if (isset($this->errors["username"][2])) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_username_length"] ?></span>
+                    <?php endif; ?>
+                    <?php if (isset($this->errors["username"][11])) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_username_specialchars"] ?></span>
+                    <?php endif; ?>
+                    <?php if ($this->setNameError === true) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_username_existing"] ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="control-group <?php if (isset($this->errors["password"])) echo "error"; ?>">
+                <label class="control-label" for="password"><?php echo $this->lang["password"] ?></label>
+                <div class="controls">
+                    <input type="password" name="password" id="password" placeholder="<?php echo $this->lang["password"] ?>">
+                    <?php if (isset($this->errors["password"])) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_password_and_password_repeat_not_identical"] ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="control-group <?php if (isset($this->errors["password"])) echo "error"; ?>">
+                <label class="control-label" for="password_repeat"><?php echo $this->lang["password_repeat"] ?></label>
+                <div class="controls">
+                    <input type="password" name="password_repeat" id="password_repeat" placeholder="<?php echo $this->lang["password_repeat"] ?>">
+                </div>
+            </div>
+
+            <?php if ($this->admin === true): ?>
+                <div class="control-group <?php if (isset($this->errors["intranet_id"])) echo "error"; ?>">
+                    <label class="control-label" for="intranet"><?php echo $this->lang["intranet"] ?></label>
+                    <div class="controls">
+                        <select name="intranet" id="intranet">
+                            <option value="0">Bitte W&auml;hlen</option>
+                            <?php foreach ($this->intranets as $intranet_id => $intranet): ?>
+                                <?php if($intranet_id == $this->intranet_id): ?>
+                                    <option value="<?php echo $intranet_id ?>" selected><?php echo $intranet ?></option>
+                                <?php else : ?>   
+                                    <option value="<?php echo $intranet_id ?>"><?php echo $intranet ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                        <?php if (isset($this->errors["intranet_id"])) : ?>
+                            <span class="help-inline"><?php echo $this->lang["error_intranet_not_chosen"] ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->admin !== true): ?>
+                <div class="control-group">
+                    <label class="control-label" for="intranet_fake"><?php echo $this->lang["intranet"] ?></label>
+                    <div class="controls">
+                        <?php foreach ($this->intranets as $intranet_id => $intranet): ?>
+                            <?php if ($intranet_id == $this->intranet_id): ?>
+                                <input type="text" name="intranet_fake" id="intranet_fake" placeholder="Intranet" value="<?php echo $intranet ?>" readonly>
+                                <input type="hidden" name="intranet" id="intranet" value="<?php echo $intranet_id ?>">
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </fieldset>
+
+        <fieldset class="profile_form">
+            <legend class="profile_form"><?php echo $this->lang["optional_data"] ?></legend>
+            <div class="control-group <?php if (isset($this->errors["firstnaem"])) echo "error"; ?>">
+                <label class="control-label" for="firstname"><?php echo $this->lang["firstname"] ?></label>
+                <div class="controls">
+                    <input type="text" name="firstname" id="firstname" placeholder="<?php echo $this->lang["firstname"] ?>" value="<?php echo $this->firstname ?>">
+                    <?php if (isset($this->errors["firstname"])) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_firstname_length"] ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>     
+
+            <div class="control-group <?php if (isset($this->errors["lastname"])) echo "error"; ?>">
+                <label class="control-label" for="lastname"><?php echo $this->lang["lastname"] ?></label>
+                <div class="controls">
+                    <input type="text" name="lastname" id="lastname" placeholder="<?php echo $this->lang["lastname"] ?>" value="<?php echo $this->lastname ?>">
+                    <?php if (isset($this->errors["lastnname"])) : ?>
+                        <span class="help-inline"><?php echo $this->lang["error_lastname_length"] ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="control-group <?php if (isset($this->errors["email"])) echo "error"; ?>">
+                <label class="control-label" for="email"><?php echo $this->lang["email"] ?></label>
+                <div class="controls">
+                    <input type="text" name="email" id="email" placeholder="<?php echo $this->lang["email"] ?>" value="<?php echo $this->email ?>">
+                    <?php if (isset($this->errors["email"])): ?>
+                        <span class="help-inline"><?php echo $this->lang["error_email"] ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="control-group <?php if (isset($this->errors["info"])) echo "error"; ?>">
+                <label class="control-label" for="info"><?php echo $this->lang["info"] ?></label>
+                <div class="controls">
+                    <textarea id="info" rows="3" name="info" id="info" ><?php echo $this->info ?></textarea>
+                    <?php if (isset($this->errors["info"])): ?>
+                        <span class="help-inline"><?php echo $this->lang["error_info_length"] ?></span>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="control-group">
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary"><?php echo $this->lang["submit"] ?></button>
+                <button type="button" class="btn" onclick="self.location.href='<?php echo $this->url_cancel ?>';"><?php echo $this->lang["cancel"] ?></button>
+            </div>
+        </div>
+
+        <input type="hidden" name="sent" value="1">
+    </form>
+</div>

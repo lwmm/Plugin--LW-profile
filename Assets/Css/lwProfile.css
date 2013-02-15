@@ -1,0 +1,56 @@
+label.control-label{
+    width: 130px!important;
+}
+
+.form-horizontal .controls{
+    margin-left: 150px;
+    margin-top: 5px;
+}
+
+fieldset.profile_form{
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+legend.profile_form{
+    font-size: 14px;
+    color: #888;
+    line-height: 20px;
+    height: 20px;
+    width: 150px;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#profile_form_container{
+    position: relative;
+    padding-top: 10px;
+}
+
+#profile_form_container #logout_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#profile_form_container form.form-horizontal div.control-group div.form-actions {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: -21px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#profile_form_container form.form-horizontal{
+    border: 1px solid #ddd;
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+#profile_form_container form.form-horizontal span{
+    font-size: 12px;
+}

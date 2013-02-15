@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class lw_profile | lw_profile</title>
+
+	<script type="text/javascript" src="resources/combined.js?3885930735"></script>
+	<script type="text/javascript" src="elementlist.js?2808168084"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-lwProfile.html">lwProfile<span></span></a>
+						<ul>
+				<li><a href="namespace-lwProfile.Controller.html">Controller</a>
+						</li>
+				<li><a href="namespace-lwProfile.Model.html">Model</a>
+						</li>
+				<li><a href="namespace-lwProfile.Services.html">Services</a>
+						</li>
+				<li><a href="namespace-lwProfile.Views.html">Views</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-lw_profile.html">lw_profile</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class lw_profile</h1>
+
+
+	<div class="description">
+	
+<p>This plguin allowes the logged in user to change his personal account
+information.</p>
+
+<p>The following information can be changed: - loginname - password - intranet
+(only for admins) - firstname - lastname - email - additional personal
+information</p>
+
+<p>This class is the interface to the contentory system and returns the required
+html output for front- or backend.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+lw_plugin
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>lw_profile</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> lw\profile<br />
+
+				<b>Author:</b>
+				Michael Mandt &lt;<a
+href="mailto:michael.mandt&#64;logic-works.de">michael.mandt&#64;<!---->logic-works.de</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-lw_profile.html#3-120" title="Go to source code">lw_profile.class.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-lw_profile.html#29-42" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>For the functionality of this plugin is it necessary to include the
+"Autoloader" and the instances of "in_auth" and "auth" objects.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>For the functionality of this plugin is it necessary to include the
+"Autoloader" and the instances of "in_auth" and "auth" objects.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="buildPageOutput" id="_buildPageOutput">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_buildPageOutput">#</a>
+		<code><a href="source-class-lw_profile.html#44-74" title="Go to source code">buildPageOutput</a>( )</code>
+
+		<div class="description short">
+			
+<p>The HTML frontend output will be build for logged in user. Not logged in user
+will be redirected to the login page.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The HTML frontend output will be build for logged in user. Not logged in user
+will be redirected to the login page.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setUserObject" id="_setUserObject">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-lwProfile.Model.UserObject.html">lwProfile\Model\UserObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUserObject">#</a>
+		<code><a href="source-class-lw_profile.html#76-94" title="Go to source code">setUserObject</a>( )</code>
+
+		<div class="description short">
+			
+<p>Information of the logged in intranet user will be collected in this
+object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Information of the logged in intranet user will be collected in this
+object.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-lwProfile.Model.UserObject.html">lwProfile\Model\UserObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getOutput" id="_getOutput">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOutput">#</a>
+		<code><a href="source-class-lw_profile.html#96-108" title="Go to source code">getOutput</a>( )</code>
+
+		<div class="description short">
+			
+<p>The HTML backend output will be build.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The HTML backend output will be build.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteEntry" id="_deleteEntry">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteEntry">#</a>
+		<code><a href="source-class-lw_profile.html#111-119" title="Go to source code">deleteEntry</a>( )</code>
+
+		<div class="description short">
+			
+<p>Here will be set if the plugin-conetentbox is deleteable from a page.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Here will be set if the plugin-conetentbox is deleteable from a page.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="db" id="$db">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-lw_profile.html#25" title="Go to source code"><var>$db</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$db" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="repository" id="$repository">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-lw_profile.html#26" title="Go to source code"><var>$repository</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$repository" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		lw_profile API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

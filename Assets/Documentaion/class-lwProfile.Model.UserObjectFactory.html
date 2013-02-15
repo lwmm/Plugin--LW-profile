@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class lwProfile\Model\UserObjectFactory | lw_profile</title>
+
+	<script type="text/javascript" src="resources/combined.js?3885930735"></script>
+	<script type="text/javascript" src="elementlist.js?2808168084"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-lwProfile.html">lwProfile<span></span></a>
+						<ul>
+				<li><a href="namespace-lwProfile.Controller.html">Controller</a>
+						</li>
+				<li class="active"><a href="namespace-lwProfile.Model.html">Model</a>
+						</li>
+				<li><a href="namespace-lwProfile.Services.html">Services</a>
+						</li>
+				<li><a href="namespace-lwProfile.Views.html">Views</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-lwProfile.Model.CommandHandler.html">CommandHandler</a></li>
+				<li><a href="class-lwProfile.Model.QueryHandler.html">QueryHandler</a></li>
+				<li><a href="class-lwProfile.Model.UserObject.html">UserObject</a></li>
+				<li class="active"><a href="class-lwProfile.Model.UserObjectFactory.html">UserObjectFactory</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-lwProfile.Model.html" title="Summary of lwProfile\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class UserObjectFactory</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-lwProfile.html">lwProfile</a>\<a href="namespace-lwProfile.Model.html">Model</a><br />
+		
+
+		<b>Located at</b> <a href="source-class-lwProfile.Model.UserObjectFactory.html#8-69" title="Go to source code">Model/UserObjectFactory.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-lwProfile.Model.UserObjectFactory.html#14-26" title="Go to source code">__construct</a>( <span>object <var>$oldUObj</var></span>, <span>object <var>$request</var></span> )</code>
+
+		<div class="description short">
+			
+<p>The user object of the loggen in user needs to be passed to the constructor
+and an instance of lw_request.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>The user object of the loggen in user needs to be passed to the constructor
+and an instance of lw_request.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oldUObj</var></dt>
+					<dd><code>object</code><br>$oldUObj</dd>
+					<dt><var>$request</var></dt>
+					<dd><code>object</code><br>$request</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="buildPreparedUserObject" id="_buildPreparedUserObject">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_buildPreparedUserObject">#</a>
+		<code><a href="source-class-lwProfile.Model.UserObjectFactory.html#28-68" title="Go to source code">buildPreparedUserObject</a>( <span>boolean <var>$TRUEupdateUser_FALSEaddUser</var></span> )</code>
+
+		<div class="description short">
+			
+<p>If the progress is update then will be an object returned with new user
+information which were submited by the profile formular but the id and
+intranet_id will be passed by the old user object. If the progress is add user
+then a new user object will be set with the profile formular informations.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>If the progress is update then will be an object returned with new user
+information which were submited by the profile formular but the id and
+intranet_id will be passed by the old user object. If the progress is add user
+then a new user object will be set with the profile formular informations.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$TRUEupdateUser_FALSEaddUser</var></dt>
+					<dd><code>boolean</code><br>$TRUEupdateUser_FALSEaddUser</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>\lwProfile\Model\UserObject<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		lw_profile API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
