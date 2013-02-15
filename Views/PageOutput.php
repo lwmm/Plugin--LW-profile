@@ -29,7 +29,7 @@ class PageOutput
         $this->request = $request;
         $this->config = $config;
         $this->db = $db;
-        $this->view = new \lw_view(dirname(__FILE__).'/templates/ProfileForm.tpl.phtml');
+        $this->view = new \lw_view(dirname(__FILE__).'/Templates/ProfileForm.tpl.phtml');
     }
     
     /**
@@ -78,7 +78,7 @@ class PageOutput
         $this->view->intranets      = $pintranets;
         $this->view->admin          = $admin;
         $this->view->errors         = $errors;
-        $this->view->urlPluginCSS   = $this->config["url"]["resource"] . "plugins/lw_profile/assets/css/LwProfile.css";
+        $this->view->urlPluginCSS   = $this->config["url"]["resource"] . "plugins/lw_profile/Assets/Css/lwProfile.css";
         $this->view->urlCSS         = $this->config["url"]["media"] . "/bootstrap/css/bootstrap.min.css";
         $this->view->urlJS          = $this->config["url"]["media"] . "/bootstrap/js/bootstrap.min.js";
         $this->view->logoutUrl      = \lw_page::getInstance()->getUrl(array("cmd" => "logout"));

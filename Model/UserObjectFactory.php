@@ -2,6 +2,8 @@
 /**
  * This class is factory for user objects.
  * 
+ * @author Michael Mandt <michael.mandt@logic-works.de>
+ * @package lw_profile
  */
 namespace lwProfile\Model;
 

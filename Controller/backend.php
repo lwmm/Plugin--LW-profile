@@ -11,6 +11,15 @@ namespace lwProfile\Controller;
 
 class backend extends \lw_object
 {
+    /**
+     * An instance of \lwIntranetuser\Services\Response() is required.
+     * @param object $config
+     * @param object $request
+     * @param object $repository
+     * @param string $pluginname
+     * @param int $oid
+     * @param object $db
+     */
     function __construct($config,$request,$repository,$pluginname,$oid, $db) 
     {
        $this->config = $config;
@@ -53,7 +62,7 @@ class backend extends \lw_object
      * The lw_i18n plugin will check the consitens of the saved key informations and add missing entries.
      * The saved language informations will be get by the lw_i18n plugin.
      * The backend formular placeholders will be filled and a constructed hmtl formular returned.
-     * @string type
+     * @return string
      */
     function backend_view()
     {        
@@ -63,7 +72,7 @@ class backend extends \lw_object
         
         $data = $this->repository->plugins()->loadPluginData($this->pluginname, $this->oid);
         
-        $view = new \lw_view(dirname(__FILE__).'/../views/templates/backendform.tpl.phtml');
+        $view = new \lw_view(dirname(__FILE__).'/../Views/Templates/backendform.tpl.phtml');
         
         $view->data         = $data;
         $view->actionUrl    = $this->buildUrl(array("pcmd"=>"save"));
@@ -71,7 +80,7 @@ class backend extends \lw_object
         $view->jqUIcss      = $this->config["url"]["media"] . "jquery/ui/css/smoothness/jquery-ui-1.8.7.custom.css";
         $view->bootstrapCSS = $this->config["url"]["media"] . "bootstrap/css/bootstrap.min.css";
         $view->bootstrapJS  = $this->config["url"]["media"] . "bootstrap/js/bootstrap.min.js";
-        $view->Css          = $this->config["url"]["resource"] . "plugins/lw_profile/assets/css/LwProfileBackend.css";
+        $view->Css          = $this->config["url"]["resource"] . "plugins/lw_profile/Assets/Css/LwProfileBackend.css";
         
         $view->de           = $this->response->getOutputByKey("i18n_de"); 
         $view->en           = $this->response->getOutputByKey("i18n_en"); 
@@ -86,10 +95,10 @@ class backend extends \lw_object
      */
     public function collectDataforLwI18nPlugin($lang = false)
     {
-        $profileDE  = \lwProfile\Views\PageOutPut::fillPlaceHolderWithSelectedLanguage("de");
+        $profileDE  = \lwProfile\Views\PageOutput::fillPlaceHolderWithSelectedLanguage("de");
         $de         = array_merge(array($this->pluginname => $profileDE));
         
-        $profileEN  = \lwProfile\Views\PageOutPut::fillPlaceHolderWithSelectedLanguage("en");
+        $profileEN  = \lwProfile\Views\PageOutput::fillPlaceHolderWithSelectedLanguage("en");
         $en         = array_merge(array($this->pluginname => $profileEN)); 
         
         switch ($lang) {
