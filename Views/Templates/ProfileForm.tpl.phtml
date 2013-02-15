@@ -84,17 +84,12 @@
             <?php endif; ?>
 
             <?php if ($this->admin !== true): ?>
-                <div class="control-group">
-                    <label class="control-label" for="intranet_fake"><?php echo $this->lang["intranet"] ?></label>
-                    <div class="controls">
-                        <?php foreach ($this->intranets as $intranet_id => $intranet): ?>
-                            <?php if ($intranet_id == $this->intranet_id): ?>
-                                <input type="text" name="intranet_fake" id="intranet_fake" placeholder="Intranet" value="<?php echo $intranet ?>" readonly>
-                                <input type="hidden" name="intranet" id="intranet" value="<?php echo $intranet_id ?>">
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                 <?php foreach ($this->intranets as $intranet_id => $intranet): ?>
+                    <?php if ($intranet_id == $this->intranet_id): ?>
+                        <input type="hidden" name="intranet_fake" id="intranet_fake" placeholder="Intranet" value="<?php echo $intranet ?>" readonly>
+                        <input type="hidden" name="intranet" id="intranet" value="<?php echo $intranet_id ?>">
+                    <?php endif; ?>
+                <?php endforeach; ?>
             <?php endif; ?>
         </fieldset>
 
