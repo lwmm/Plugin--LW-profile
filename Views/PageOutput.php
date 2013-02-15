@@ -82,12 +82,18 @@ class PageOutput
              $this->view->response  = 0;
         }
         
+        if(isset($plugindata["parameter"]["bootstrap"]) && $plugindata["parameter"]["bootstrap"] == 1) {
+            $this->view->useBootstrap   = 1;
+            $this->view->urlCSS         = $this->config["url"]["media"] . "/bootstrap/css/bootstrap.min.css";
+            $this->view->urlJS          = $this->config["url"]["media"] . "/bootstrap/js/bootstrap.min.js";
+        } else {
+            $this->view->useBootstrap   = 0;
+        }
+        
         $this->view->intranets      = $pintranets;
         $this->view->admin          = $admin;
         $this->view->errors         = $errors;
-        $this->view->urlPluginCSS   = $this->config["url"]["resource"] . "plugins/lw_profile/Assets/Css/lwProfile.css";
-        $this->view->urlCSS         = $this->config["url"]["media"] . "/bootstrap/css/bootstrap.min.css";
-        $this->view->urlJS          = $this->config["url"]["media"] . "/bootstrap/js/bootstrap.min.js";
+        $this->view->urlPluginCSS   = $this->config["url"]["resource"] . "plugins/lw_profile/assets/css/lwProfile.css";
         $this->view->logoutUrl      = \lw_page::getInstance()->getUrl(array("cmd" => "logout"));
         $this->view->firstname      = $data["firstname"];
         $this->view->lastname       = $data["lastname"];

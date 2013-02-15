@@ -19,10 +19,14 @@
 });
 </script>
 <?php endif; ?>
-<link href="<?php echo $this->urlCSS ?>" rel="stylesheet">
-<link href="<?php echo $this->urlPluginCSS ?>" rel="stylesheet">
-<script type="text/javascript" src="<?php echo $this->urlJS ?>"></script>
 
+<link href="<?php echo $this->urlPluginCSS ?>" rel="stylesheet">
+
+<?php if($this->useBootstrap == 1): ?>
+    <link href="<?php echo $this->urlCSS ?>" rel="stylesheet">
+    <script type="text/javascript" src="<?php echo $this->urlJS ?>"></script>
+<?php endif; ?>
+    
 <div id="profile_form_container">
     <button id="logout_btn" type="button" class="btn btn-inverse" onclick="self.location.href='<?php echo $this->logoutUrl ?>';">Logout</button><br/><br/>
     <form class="form-horizontal" action="<?php echo $this->formUrl ?>" method="post">
