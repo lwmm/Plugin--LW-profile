@@ -96,7 +96,7 @@ class ProfileController extends \lw_object
         }
         $updatedUserObject = $this->uObjFactory->buildPreparedUserObject(true);
         if($this->commandHandler->updateUser($updatedUserObject)) {
-           $this->pageReload($pluginUrlIntranetUser);
+           $this->pageReload($pluginUrlIntranetUser . "&result=1");
         } else {
             throw new \Exception("Error: Update User");
         }
@@ -113,7 +113,7 @@ class ProfileController extends \lw_object
         $result = $this->queryHandler->getUserByLoginname($newUserObject->getUserData("username"));
         if(empty($result)) {
             if($this->commandHandler->addUser($newUserObject)) {
-                $this->pageReload($pluginUrlIntranetUser);
+                $this->pageReload($pluginUrlIntranetUser ."&result=1");
             } else {
                 throw new \Exception("Error: Add User");
             }

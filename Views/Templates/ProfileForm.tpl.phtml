@@ -1,3 +1,24 @@
+<?php if($this->response > 0):?>
+<script type="text/javascript" src="<?php echo $this->jqUI ?>"></script>
+<script>
+    $(document).ready(function() {
+    <?php
+    if ($this->response == '1'):
+        $message = "Es wurde erfolgreich gespeichert";
+    endif; ?>
+    var data = $('<div><h3 class="alert alert-success"><?php echo $message; ?></h3></div>');
+    var popup= $('<div id="popup">');
+    popup.append(data);
+    $('body').append(popup);
+    popup.css("position", "absolute");
+    popup.css("top", ($(window).height() - popup.height()) / 2 + $(window).scrollTop() + "px");
+    popup.css("left", ($(window).width() - popup.width()) / 2 + $(window).scrollLeft() + "px");
+    popup.hide();
+    popup.slideDown(1000, 'linear');
+    popup.slideUp(1000, 'linear');
+});
+</script>
+<?php endif; ?>
 <link href="<?php echo $this->urlCSS ?>" rel="stylesheet">
 <link href="<?php echo $this->urlPluginCSS ?>" rel="stylesheet">
 <script type="text/javascript" src="<?php echo $this->urlJS ?>"></script>

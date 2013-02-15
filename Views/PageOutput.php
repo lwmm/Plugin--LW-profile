@@ -75,6 +75,13 @@ class PageOutput
             $this->view->url_cancel = $pluginUrlIntranetUser;
         }
         
+        if($this->request->getInt("result")) {
+            $this->view->jqUI       = $this->config["url"]["media"] . "jquery/jquery.min.js";
+            $this->view->response   = $this->request->getInt("result");
+        } else {
+             $this->view->response  = 0;
+        }
+        
         $this->view->intranets      = $pintranets;
         $this->view->admin          = $admin;
         $this->view->errors         = $errors;
