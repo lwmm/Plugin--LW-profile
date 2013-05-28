@@ -33,7 +33,7 @@ class Autoloader
         switch ($array[0]) {
 
             case "LwI18n":
-                $path = dirname(__FILE__).'/../../lw_i18n';
+                $path = dirname(__FILE__).'/../../Plugin--LW-i18n';
                 $filename = str_replace('LwI18n', $path, $className);
                 break;
             
