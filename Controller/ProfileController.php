@@ -96,6 +96,7 @@ class ProfileController extends \lw_object
         }
         $updatedUserObject = $this->uObjFactory->buildPreparedUserObject(true);
         if($this->commandHandler->updateUser($updatedUserObject)) {
+            \lw_in_auth::getInstance()->reloadData();
            $this->pageReload($pluginUrlIntranetUser . "&result=1");
         } else {
             throw new \Exception("Error: Update User");
