@@ -20,6 +20,7 @@ define("PAYMENT", "8");     # array( 8 => array( "error" => 1, "options" => "" )
 define("BOOL", "9");        # array( 9 => array( "error" => 1, "options" => "" ));
 define("PWREPEAT", "10");   # array( 10 => array( "error" => 1, "options" => "" ));
 define("SPECIALCHARS","11");# array( 10 => array( "error" => 1, "options" => "" ));
+define("PWSTRENGTH","12");# array( 10 => array( "error" => 1, "options" => "" ));
 
 
 class FormValidate 
@@ -37,6 +38,7 @@ class FormValidate
     public function __construct()
     {
         $this->updateOrAddUser = true;
+        $this->pwMinStrength = 0;
         $this->errors = array();
         
         $this->allowedKeys = array(
@@ -59,6 +61,11 @@ class FormValidate
     public function setTRUEupdateUser_FALSEaddUser($bool)
     {
         $this->updateOrAddUser = $bool;
+    }
+    
+    public function setPwMinStrength($value)
+    {
+        $this->pwMinStrength = $value;
     }
     
     /**
@@ -187,6 +194,14 @@ class FormValidate
         $bool = $this->defaultValidation("password", $value, 255, $required);
         if($value !== $this->array["password_repeat"]) {
             $this->addError("password", PWREPEAT);
+            $bool = false;
+        }
+        
+        $pws = new \lw_passwordStrength('', $value);
+        $strength = $pws->getPasswordStrength();
+        
+        if($strength < $this->pwMinStrength){
+            $this->addError("password", PWSTRENGTH);
             $bool = false;
         }
         

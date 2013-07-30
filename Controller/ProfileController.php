@@ -65,6 +65,7 @@ class ProfileController extends \lw_object
             $this->validate->setTRUEupdateUser_FALSEaddUser($TRUEupdateUser_FALSEaddUser); 
             
             $this->validate->setValues($this->setFormArray());
+            $this->validate->setPwMinStrength($this->config['general']['passwordStrength']);
             $this->validate->validate();
             $validateErrors = $this->validate->getErrors();
             if(!empty($validateErrors)) {

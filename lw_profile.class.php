@@ -24,8 +24,10 @@ class lw_profile extends lw_plugin
     private $in_auth;
     protected $db;
     protected $repository;
+    protected $request;
 
-    
+
+
     /**
      * For the functionality of this plugin is it necessary to include
      * the "Autoloader" and the instances of "in_auth" and "auth"
@@ -48,7 +50,12 @@ class lw_profile extends lw_plugin
      * @return string
      */
     public function buildPageOutput()
-    {
+    {        
+        if($this->request->getAlnum("cmd") == "checkpw"){
+            $pws = new \lw_passwordStrength('', $this->request->getRaw('password'));
+            exit($pws->getPasswordStrength());
+        }
+        
         $plugindata = $this->repository->plugins()->loadPluginData($this->getPluginName(),$this->params['oid']);
         
         if($this->request->getAlnum("cmd") == "logout"){

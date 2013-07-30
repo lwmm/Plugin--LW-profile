@@ -113,6 +113,9 @@ class PageOutput
             $this->view->lang       = $this->fillPlaceHolderWithSelectedLanguage("de");
         }
         
+        $this->view->pwminstrength      = $this->config['general']['passwordStrength'];
+        $this->view->checkPwUrl         = \lw_page::getInstance()->getUrl(array("cmd" => "checkpw"));
+        $this->view->jqueryMin          = $this->config["url"]["media"] . "jquery/jquery.min.js";
         return $this->view->render();
     }
     
@@ -166,6 +169,8 @@ class PageOutput
             "error_firstname_length"                            => "Max 255 Zeichen!",
             "error_lastname_length"                             => "Max 255 Zeichen!",
             "error_email"                                       => "Keine korrekte Email-Adresse!",
+            "error_password_strength"                           => "Die Passwortschwierigkeit ist zu gering.",
+            "error_password_strength_expected"                  => "Die ben&ouml;tigte Passwortschriegkeit liegt bei :"
         );
         
         $languageEN = array(
@@ -189,6 +194,8 @@ class PageOutput
             "error_firstname_length"                            => "Max 255 characters!",
             "error_lastname_length"                             => "Max 255 characters!",
             "error_email"                                       => "No correct email address",
+            "error_password_strength"                           => "The password strength is not high enough.",
+            "error_password_strength_expected"                  => "The expected strength is :"
         );
         
         if($lang == "de") {
