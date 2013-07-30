@@ -197,12 +197,14 @@ class FormValidate
             $bool = false;
         }
         
-        $pws = new \lw_passwordStrength('', $value);
-        $strength = $pws->getPasswordStrength();
-        
-        if($strength < $this->pwMinStrength){
-            $this->addError("password", PWSTRENGTH);
-            $bool = false;
+        if(strlen($value) > 0){
+            $pws = new \lw_passwordStrength('', $value);
+            $strength = $pws->getPasswordStrength();
+
+            if($strength < $this->pwMinStrength){
+                $this->addError("password", PWSTRENGTH);
+                $bool = false;
+            }
         }
         
         if(!$bool) {

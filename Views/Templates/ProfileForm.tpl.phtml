@@ -32,19 +32,21 @@
     $(document).ready(function(){
             $('#password').blur(function(){
                 password = $('#password').val();
-                $.get("<?php echo $this->checkPwUrl; ?>", { "pw": password }, 
-                function(data){ 
-                    if (!data) {
-                        data = 0;
-                    }
-                    var border = <?php echo $this->pwminstrength; ?>;
-                    if(data < border) {
-                        $('#pwstrength').html('<span style="display:inline-block; width:200px; text-align:center; background-color:#cc0000; color:#ffffff;">zu schwach: '+data+" / "+border+"</span>");
-                    }
-                    else {
-                        $('#pwstrength').html('<span style="display:inline-block; width:200px; text-align:center; background-color:#00cc00; color:#ffffff;">stark genug: '+data+" / "+border+"</span>");
-                    }
-                });
+                if(password.length > 0){
+                    $.get("<?php echo $this->checkPwUrl; ?>", { "pw": password }, 
+                    function(data){ 
+                        if (!data) {
+                            data = 0;
+                        }
+                        var border = <?php echo $this->pwminstrength; ?>;
+                        if(data < border) {
+                            $('#pwstrength').html('<span style="display:inline-block; width:200px; text-align:center; background-color:#cc0000; color:#ffffff;">zu schwach: '+data+" / "+border+"</span>");
+                        }
+                        else {
+                            $('#pwstrength').html('<span style="display:inline-block; width:200px; text-align:center; background-color:#00cc00; color:#ffffff;">stark genug: '+data+" / "+border+"</span>");
+                        }
+                    });
+                }
             });
         });
 </script>    
