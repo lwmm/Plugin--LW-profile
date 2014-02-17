@@ -51,8 +51,9 @@ class lw_profile extends lw_plugin
      */
     public function buildPageOutput()
     {        
+        
         if($this->request->getAlnum("cmd") == "checkpw"){
-            $pws = new \lw_passwordStrength('', $this->request->getRaw('password'));
+            $pws = new \lw_passwordStrength('', trim($this->request->getRaw('pw')));
             exit($pws->getPasswordStrength());
         }
         
